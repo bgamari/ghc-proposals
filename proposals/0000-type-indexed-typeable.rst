@@ -81,7 +81,7 @@ proposal is the introduction of a new type reflection interface, exposed in the
     -- provide these
     instance Eq (TypeRep a)  where (==) _ _    = True
     instance Ord (TypeRep a) where compare _ _ = EQ
-    instance TestEquality TypeRepX
+    instance TestEquality TypeRep
 
 .. [PeytonJones2016]
     Peyton Jones, Weirich, Eisenberg, Vytiniotis. "`A Reflection on Types
@@ -91,6 +91,8 @@ proposal is the introduction of a new type reflection interface, exposed in the
 Like today, the new ``Typeable`` mechanism will only support kind-monomorphic
 types. Unlike today's mechanism, we provide a means of extracting the *kind* of
 a type representation,
+
+.. code-block:: haskell
 
     -- | The kind of a type.
     typeRepKind :: TypeRep (a :: k) -> TypeRep k
@@ -151,12 +153,12 @@ We can also test for type equality,
 
 .. code-block:: haskell
 
-    -- | Kind-homogenous type equality
+    -- | Kind-homogeneous type equality
     eqTypeRep  :: forall k (a :: k) (b :: k).
                   TypeRep a -> TypeRep b -> Maybe (a :~: b)
 
-    -- | Kind-heterogenous type equality
-    eqTypeRep' :: forall k1 k2 (a :: k1) (b :: k2).
+    -- | Kind-heterogeneous type equality
+    heqTypeRep :: forall k1 k2 (a :: k1) (b :: k2).
                   TypeRep a -> TypeRep b -> Maybe (a :~~: b)
 
 Since ``TypeRep`` is a singleton, we can provide a means of satisfying a
@@ -179,7 +181,7 @@ this we introduce,
     instance Ord SomeTypeRep
     instance Show SomeTypeRep
 
-    someTypeRep :: Typeable a => Proxy a -> SomeTypeRep
+    someTypeRep :: Typeable a => proxy a -> SomeTypeRep
 
 Implementing ``Data.Dynamic``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
