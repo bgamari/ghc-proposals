@@ -81,7 +81,7 @@ proposal is the introduction of a new type reflection interface, exposed in the
     -- provide these
     instance Eq (TypeRep a)  where (==) _ _    = True
     instance Ord (TypeRep a) where compare _ _ = EQ
-    instance TestEquality TypeRepX
+    instance TestEquality TypeRep
 
 .. [PeytonJones2016]
     Peyton Jones, Weirich, Eisenberg, Vytiniotis. "`A Reflection on Types
@@ -91,6 +91,8 @@ proposal is the introduction of a new type reflection interface, exposed in the
 Like today, the new ``Typeable`` mechanism will only support kind-monomorphic
 types. Unlike today's mechanism, we provide a means of extracting the *kind* of
 a type representation,
+
+.. code-block:: haskell
 
     -- | The kind of a type.
     typeRepKind :: TypeRep (a :: k) -> TypeRep k
@@ -115,15 +117,15 @@ constructors,
 .. code-block:: haskell
 
     -- | A type constructor type. This is a bidirectional pattern.
-    pattern TRCon :: forall k (a :: k). TyCon -> TypeRep a
+    pattern TRCon :: forall k (a :: k). TyCon a -> TypeRep a
 
     -- | Information about a type constructor. No means of constructing 'TyCon's
     -- is provided; the only values of this type available are those from
     -- 'TypeRep's.
-    data TyCon
-    tyConPackage :: TyCon -> String
-    tyConModule :: TyCon -> String
-    tyConName :: TyCon -> String
+    data TyCon a
+    tyConPackage :: TyCon a -> String
+    tyConModule :: TyCon a -> String
+    tyConName :: TyCon a -> String
 
 Type application can also be decomposed,
 
@@ -151,12 +153,12 @@ We can also test for type equality,
 
 .. code-block:: haskell
 
-    -- | Kind-homogenous type equality
+    -- | Kind-homogeneous type equality
     eqTypeRep  :: forall k (a :: k) (b :: k).
                   TypeRep a -> TypeRep b -> Maybe (a :~: b)
 
-    -- | Kind-heterogenous type equality
-    eqTypeRep' :: forall k1 k2 (a :: k1) (b :: k2).
+    -- | Kind-heterogeneous type equality
+    heqTypeRep :: forall k1 k2 (a :: k1) (b :: k2).
                   TypeRep a -> TypeRep b -> Maybe (a :~~: b)
 
     -- | Kind-heterogenous type equality
@@ -183,7 +185,7 @@ this we introduce,
     instance Ord SomeTypeRep
     instance Show SomeTypeRep
 
-    someTypeRep :: Typeable a => Proxy a -> SomeTypeRep
+    someTypeRep :: Typeable a => proxy a -> SomeTypeRep
 
 Implementing ``Data.Dynamic``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -282,7 +284,7 @@ The heart of ``Type.Reflection`` is the ``TypeRep`` type. It can be defined as a
 standard GADT (omitting the ``Fingerprint``s used for O(1) comparison), ::
 
     data TypeRep (a :: k) where
-        TrTyCon :: TyCon -> TypeRep k -> TypeRep (a :: k)
+        TrTyCon :: TyCon a -> TypeRep k -> TypeRep (a :: k)
         TrApp   :: forall k1 k2 (a :: k1 -> k2) (b :: k1).
                    TypeRep (a :: k1 -> k2)
                 -> TypeRep (b :: k1)
