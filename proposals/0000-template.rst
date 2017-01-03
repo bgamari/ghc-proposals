@@ -25,11 +25,11 @@ Proposed Change
 ---------------
 Specify the change in precise, comprehensive yet concise language. Strive for a complete definition. Your specification may include,
 
-      * grammar and semantics of any new syntactic constructs
-      * the types and semantics of any new library interfaces
-      * how the proposed change addresses the original problem
+* grammar and semantics of any new syntactic constructs
+* the types and semantics of any new library interfaces
+* how the proposed change addresses the original problem
         (perhaps returning to the concrete examp
-      * how the proposed change might interact with existing language or
+* how the proposed change might interact with existing language or
         compiler features
 
 Note, however, that this section need not describe details of the
