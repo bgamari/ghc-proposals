@@ -21,16 +21,14 @@ Motivation
 Give a strong reason for why the community needs this change. Describe the use case as clearly as possible and give an example. Explain how the status quo is insufficient or not ideal.
 
 
-Proposed Change
----------------
-Specify the change in precise, comprehensive yet concise language. Strive for a complete definition. Your specification may include,
+Proposed Change Specification
+-----------------------------
+Specify the change in precise, comprehensive yet concise language. Avoid words like should or could. Strive for a complete definition. Your specification may include,
 
 * grammar and semantics of any new syntactic constructs
 * the types and semantics of any new library interfaces
 * how the proposed change addresses the original problem
-        (perhaps returning to the concrete examp
-* how the proposed change might interact with existing language or
-        compiler features
+* how the proposed change might interact with existing language or compiler features
 
 Note, however, that this section need not describe details of the
 implementation of the feature. The proposal is merely supposed to give a
