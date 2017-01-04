@@ -8,9 +8,9 @@ GHC proposals move through a set of phases,
   and drawbacks. Upload this document to the GHC's proposal repository as a pull
   request.
 
-- *Debate*: The community will debate the pros and cons of your proposal
-  document. You may edit and improve your proposal document at any time. This
-  debate phase is limted to 4 weeks after the last edit.
+- *Discussion*: The community will debate the pros and cons of your proposal
+  as described in the document. You may edit and improve your proposal document at any time. This
+  debate phase is limited to 4 weeks after the last edit.
 
 - *Committee decision*: The GHC Steering Committee will review your proposal
   document and its ensuing debate and decide whether to accept or reject
@@ -18,8 +18,7 @@ GHC proposals move through a set of phases,
   at any time.
 
 - *Implementation*: Accepted proposals may be implemented and submitted for code review.
-  In most cases the proposal author will implement the change themseves,
-  although they are under no obligation to do so.
+  In most cases, proposal authors will implement the change themselves, but there is no obligation to do so.
 
 
 Technical Facilitation of the Process
@@ -27,8 +26,6 @@ Technical Facilitation of the Process
 
 We are using GitHub's pull request infrastructure to facilitate proposal
 collection and discussion. 
-
-
 
 Pull request tags are used to communicate in which phase the proposal
 is currently in.
@@ -40,29 +37,29 @@ is currently in.
   with ``@ghc-steering``
 - Accepted proposals will be marked as ``@>->-`` by the Steering committee.
 
-Proposal Document
------------------
+Content of the Proposal Document
+--------------------------------
 
 Each proposal document must follow the following outline (Template provided in `proposal template <https://github.com/ghc-proposals/ghc-proposals/blob/master/proposals/0000-template.rst>`_.)
 
 a. *Motivation*: Give a strong reason for why the community needs this change. Describe the use case as clearly as possible and give an example. Explain how the status quo is insufficient or not ideal.
 
-b. *Proposed Change*: Specify the change in precise, comprehensive yet concise language. Strive for a complete definition. Your specification may include,
+b. *Proposed Change Specification*: Specify the change in precise, comprehensive yet concise language. Strive for a complete definition. Your specification may include,
 
-      * grammar and semantics of any new syntactic constructs
-      * the types and semantics of any new library interfaces
-      * how the proposed change addresses the original problem
-        (perhaps returning to the concrete examp
-      * how the proposed change might interact with existing language or
-        compiler features
+- grammar and semantics of any new syntactic constructs
+- the types and semantics of any new library interfaces
+- how the proposed change addresses the original problem (perhaps referring back to the example)
+- how the proposed change might interact with existing language or compiler features
 
-c. Effect and Interactions. Detail how the proposed change addresses the original problem raised in the motivation. Detail how the proposed change interacts with existing language or compiler features and provide arguments why this is not going to pose problems.
+c. *Effect and Interactions*. Detail how the proposed change addresses the original problem raised in the motivation. Detail how the proposed change interacts with existing language or compiler features and provide arguments why this is not going to pose any problems.
 
-d. Drawbacks. Define and list any remaining drawbacks that cannot be resolved. Give an estimate on development and maintenance costs. List how this effects learnability of the language for novice users.
+d. *Costs and Drawbacks*. Give an estimate on development and maintenance costs. List how this effects learnability of the language for novice users. Define and list any remaining drawbacks that cannot be resolved.
 
 e. *Alternatives*: List existing alternatives to your proposed change as they currently exist and discuss why they are insufficient.
 
 f. *Unresolved questions*: Explicitly list any remaining issues that remain in the conceptual design and specification. Be upfront and trust that the community will help. Please do not list *implementation* issues.
+
+g. *Implementation Plan* (Optional): If accepted who will implement the change? Which other ressources and prerequisites are required for implementation? 
 
 
 Note that proposals are written in `ReStructuredText
@@ -74,48 +71,22 @@ for a brief introduction to ReStructuredText.les introduced in the *Motivation*
 section).
 
 
+Technical Issues of Proposal Submission
+---------------------------------------
 
-Development phase
------------------
 
-The body of a proposal is a document based on the
-`proposal template <https://github.com/ghc-proposals/ghc-proposals/blob/master/proposals/0000-template.rst>`_.
-To begin a new proposal copy this file with a new name briefly describing your
-proposal (e.g. ``0000-type-indexed-typeable.rst``). This can be done either online
+To begin a new proposal copy the `proposal template <https://github.com/ghc-proposals/ghc-proposals/blob/master/proposals/0000-template.rst>`_. with a new name briefly describing your
+proposal (e.g. ``0000-type-indexed-typeable.rst``). 
+
+This can be done either online
 through GitHub's in-place editing feature (the pencil icon visible when viewing
 a file on GitHub) or locally by forking this repository and cloning the fork.
+-- the former will not work -- 
+
+
 See GitHub's `documentation <https://help.github.com/articles/fork-a-repo/>`_ if
 you are unfamiliar with this aspect of GitHub's workflow.
 
-Your proposal should cover all of the sections defined this the template. This
-includes,
-
-   a. *Motivation*: Why do we need your change? Be specific: a concrete example
-      or two can do wonders.
-      
-   b. *Proposed Change*: What change are you proposing? This is the
-      specification of your change and should be precise and comprehensive. This
-      might include,
-
-      * grammar and semantics of any new syntactic constructs
-      * the types and semantics of any new library interfaces
-      * how the proposed change addresses the original problem
-        (perhaps returning to the concrete examples introduced in the
-        *Motivation* section).
-      * how the proposed change might interact with existing language or
-        compiler features
-
-      This generally needn't discuss the implementation of the change.
-   c. *Drawbacks*: There's no such thing as a free lunch; what is the cost of
-      your proposal? This includes the cost of implementing the proposal,
-      mainintaining it indefinitely, teaching it to new users, and considering
-      its interaction with future proposals.
-   d. *Alternatives*: What alternatives to the proposed change exist? These can
-      range from minor variants to completely . This doesn't need to go into
-      great detail, just give the reader a sketch of the design space.
-   e. *Unresolved questions*: What issues area still outstanding in the design?
-      This needn't discuss outstanding *implementation* questions, we are
-      presently only concerned with the conceptual design of your idea.
 
 Note that proposals are written in `ReStructuredText
 <http://www.sphinx-doc.org/en/stable/rest.html>`_ rather than Markdown for its
