@@ -43,9 +43,9 @@ Detail how the proposed change addresses the original problem raised in the moti
 
 
 
-Drawbacks
----------
-Define and list any remaining drawbacks that cannot be resolved. Give an estimate on development and maintenance costs. List how this effects learnability of the language for novice users.
+Costs and Drawbacks
+-------------------
+Give an estimate on development and maintenance costs. List how this effects learnability of the language for novice users. Define and list any remaining drawbacks that cannot be resolved.
 
 
 
@@ -55,14 +55,14 @@ List existing alternatives to your proposed change as they currently exist and d
 
 
 
-Implementation Plan
--------------------
-(Optional) If accepted who will implement the change? Which other ressources and prerequisites are required for implementation. 
-
-
-
 Unresolved questions
 --------------------
 Explicitly list any remaining issues that remain in the conceptual design and specification. Be upfront and trust that the community will help. Please do not list *implementation* issues.
 
-Hopefully this section will be empty by the time the proposal is brought up for a final decision.
+Hopefully this section will be empty by the time the proposal is brought to the steering committee.
+
+
+
+Implementation Plan
+-------------------
+(Optional) If accepted who will implement the change? Which other ressources and prerequisites are required for implementation?
