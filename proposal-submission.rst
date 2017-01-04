@@ -74,6 +74,38 @@ section).
 Technical Issues of Proposal Submission
 ---------------------------------------
 
+1. Fork the ghc-proposals repository
+2. Create a file for your proposal document by copying the proposals template to a new file in the proposals subdirectory. 
+
+
+
+### Detailed instruction on setting up your ghc-proposal fork
+
+You have two options: Editing the files on your computer or directly on github.
+
+#### Edit proposal on your computer:
+
+1. Clone the repository to your computer. 
+  - You find the clone command after clicking on "Clone or Download" button.
+  - Open a terminal in the cloned directory.
+2. Create a new branch for your proposal (say, $myproposal).
+  - ``git branch $myproposal; git checkout $myproposal``
+3. Copy the template to a new file
+  - ``cd proposals;  cp 0000-template.rst 0000-$myproposal.rst``
+4. Add the new file to the repository
+  - ``git add 000-$myproposal.rst``
+5. Commit the file to your github
+  - ``git commit -a``
+6. Push your new branch to your github repository
+  - ``git push --set-upstream origin $myproposal``
+  
+You only need to do this once. For all future edits to your proposal you only need to commit and push:
+  - ``git commit -a; git push``
+
+#### Edit proposal on Github
+
+
+
 
 To begin a new proposal copy the `proposal template <https://github.com/ghc-proposals/ghc-proposals/blob/master/proposals/0000-template.rst>`_. with a new name briefly describing your
 proposal (e.g. ``0000-type-indexed-typeable.rst``). 
