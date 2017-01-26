@@ -311,16 +311,16 @@ the following user-defined ``HasField`` instances are prohibited (in
 addition to the usual rules, such as the prohibition on type
 families):
 
- * ``HasField _ r _`` where ``r`` is a variable;
+* ``HasField _ r _`` where ``r`` is a variable;
 
- * ``HasField _ (T ...) _`` if ``T`` is a data family (because it
-   might have fields introduced later, using data instance declarations);
+* ``HasField _ (T ...) _`` if ``T`` is a data family (because it
+  might have fields introduced later, using data instance declarations);
 
- * ``HasField x (T ...) _`` if ``x`` is a variable and ``T`` has any
-   fields at all (but this instance is permitted if ``T`` has no fields);
+* ``HasField x (T ...) _`` if ``x`` is a variable and ``T`` has any
+  fields at all (but this instance is permitted if ``T`` has no fields);
 
- * ``HasField "foo" (T ...) _`` if ``T`` has a field ``foo`` (but this
-   instance is permitted if it does not).
+* ``HasField "foo" (T ...) _`` if ``T`` has a field ``foo`` (but this
+  instance is permitted if it does not).
 
 
 Drawbacks
