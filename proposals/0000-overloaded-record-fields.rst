@@ -438,11 +438,11 @@ It is possible to define a ``HasField``-like class in user code,
 without requiring built-in constraint solving behaviour.  Two
 approaches have been demonstrated:
 
- * using generic programming (`generic-records
-   <https://hackage.haskell.org/package/generic-records>`_);
+* using generic programming (`generic-records
+  <https://hackage.haskell.org/package/generic-records>`_);
 
- * using Template Haskell (`overloaded-records
-   <http://hackage.haskell.org/package/overloaded-records>`_).
+* using Template Haskell (`overloaded-records
+  <http://hackage.haskell.org/package/overloaded-records>`_).
 
 It could be argued that the ability to do this in user code means it
 is not necessary to make it part of the compiler.
