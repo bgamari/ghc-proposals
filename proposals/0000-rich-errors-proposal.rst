@@ -445,5 +445,7 @@ Implementation Plan
 -------------------
 
 Well-Typed LLP will implement this proposal with financial support from
-Richard Eisenberg.
+Richard Eisenberg, under NSF grant number 1704041. Having better support
+for error messages will smooth the way toward dependent types (the main
+objective of that NSF grant).
 
