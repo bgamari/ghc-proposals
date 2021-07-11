@@ -304,7 +304,8 @@ throw?
 
 Implementation Plan
 -------------------
-@bgamari has a branch in progress which sketches an implementation.
+@bgamari and @supersven have a branch in progress which sketches an implementation:
+https://gitlab.haskell.org/ghc/ghc/-/merge_requests/3236
 
 Endorsements
 -------------
